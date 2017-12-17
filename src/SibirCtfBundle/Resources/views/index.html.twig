@@ -1,0 +1,64 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+
+{% block body %}
+    <style type="text/css">
+        .program {
+            margin: 50px 0;
+        }
+    </style>
+    <div class="main-about">
+        <div class="row" style="margin: 0">
+            <div class="col-md-6 main-about__left">
+                <img src="{{ asset('img/main/main-uzor.png') }}" width="100%"></div>
+            <div class="col-md-6 main-about__right">
+                <div style="margin: 0 0 0 40px;">
+                    <h1 class="uppercase">Впервые в истории российского <br />CTF-движения!</h1>
+                    <p>Победители всех соревнований 2017 года<br />
+                        встретятся на одной площадке, чтобы разыграть<br />
+                        Кубок CTF России
+                    </p>
+                    <a href="{{ path('signup_all') }}"><button class="main-about__button">Стать участником</button></a>
+                    <a href="{{ path('registration-volunteer') }}"><button class="main-about__button">Стать волонтером</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-10 text-center col-lg-offset-1">
+                <img class="main-logo__big" src="{{ asset('img/logo_fin.svg') }}" width="100%" />
+                <div class="row" style="margin-bottom: 100px">
+                    <div class="col-md-7" style="margin: 0 auto; float: none">
+                        <p>Впервые в истории российского СTF-движения победители сильнейших региональных соревнований среди студентов, школьников и учащихся ссузов соберутся на Кубке СTF России, чтобы побороться за звание чемпиона! Битва года состоится 8-9 декабря 2017 года в Инновационном центре «Сколково» (Московская обл.).</p>
+                    </div>
+                </div>
+                <h2>В программе</h2>
+                <div class="row program">
+                    <div class="col-md-4 col-sm-4">
+                        <img width="150" src="{{ asset('img/index/task.jpg') }}" />
+                        <h3 class="row part">Task-based</h3>
+                        для 20 приглашенных <br>команд
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <img width="150" src="{{ asset('img/index/attack.jpg') }}" />
+                        <h3 class="row part">Attack-defense</h3>
+                        для 10 лучших
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <img width="150" src="{{ asset('img/logo_fin_purple.png') }}" />
+                        <h3 class="row part">Battle</h3>
+                        для 4 победителей <br>предыдущих этапов
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" style="text-align: center;">
+                    <p><a href="{{ path('signup_all') }}"><button type="button" class="main-button__big">Зарегистрироваться</button></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

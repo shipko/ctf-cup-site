@@ -1,0 +1,15 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+{% set registration = app.session.flashbag.get('registration')|first %}
+
+{% block body %}
+    <div class="row">
+        <div class="box">
+            <div class="col-md-8 col-md-offset-2">
+                <h1 class="text-center">Заявка принята</h1>
+                <p class="text-center" style="margin-top: 40px">После рассмотрения заявки мы свяжемся с Вами. Хорошего дня!</p>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

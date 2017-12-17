@@ -1,0 +1,112 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+
+{% block body %}
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script type="text/javascript">
+        var map1,
+            map2,
+            map3;
+    </script>
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-lg-12 page__title">
+                <h2 class="intro-text text-center">Расписание</h2>
+            </div>
+
+        <div class="col-sm-5">
+            <div class="col-sm-12 center"><h3>8 декабря</h3></div>
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th width="110">Время</th>
+                        <th colspan="2">Мероприятие</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>08:00 - 09:00</td>
+                        <td colspan="2">Сбор гостей</td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 10:00</td>
+                        <td colspan="2">Открытие</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 13:00</td>
+                        <td colspan="2">Часть 1: Task-based CTF</td>
+                    </tr>
+                    <tr>
+                        <td>13:00 - 14:00</td>
+                        <td colspan="2">Обед</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 20:00</td>
+                        <td colspan="2">Часть 1: Task-based CTF</td>
+                    </tr>
+                    <tr>
+                        <td>20:00 - 21:00</td>
+                        <td colspan="2">Отъезд гостей</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <div class="col-sm-12 center"><h3>9 декабря</h3></div>
+            <div class="col-sm-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th width="110">Время</th>
+                        <th colspan="3">Мероприятие</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>09:00 - 09:30</td>
+                        <td colspan="3">Сбор гостей</td>
+                    </tr>
+                    <tr>
+                        <td>09:30 - 10:00</td>
+                        <td colspan="3">Инструктаж</td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 14:00</td>
+                        <td>Часть 2: Attack-defense</td>
+                        <td>Часть 2.1: Flag rush</td>
+                        <td>Выставка</td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 14:45</td>
+                        <td colspan="3">Обед</td>
+                    </tr>
+                    <tr>
+                        <td>14:45 - 15:00</td>
+                        <td colspan="3">Инструктаж</td>
+                    </tr>
+                    <tr>
+                        <td>15:00 - 17:00</td>
+                        <td>Часть 3: Battle (полуфинал)</td>
+                        <td rowspan="2">Часть 3.1: HackBOX</td>
+                        <td rowspan="2">Выставка с заданиями от партнеров</td>
+                    </tr>
+                    <tr>
+                        <td>17:00 - 19:00</td>
+                        <td>Часть 3: Battle (финал)</td>
+                    </tr>
+                    <tr>
+                        <td>19:00 - 20:00</td>
+                        <td colspan="3">Награждение</td>
+                    </tr>
+                    <tr>
+                        <td>21:00 - 00:00</td>
+                        <td colspan="3">After party</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

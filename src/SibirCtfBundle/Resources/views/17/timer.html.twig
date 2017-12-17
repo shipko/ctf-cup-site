@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SibirCTF 2017. Stay tuned</title>
+    <link rel="stylesheet" type="text/css" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://git.wimbarelds.nl/TimeCircles/inc/TimeCircles.js"></script>
+    <link href="http://git.wimbarelds.nl/TimeCircles/inc/TimeCircles.css" rel="stylesheet">
+
+</head>
+<body>
+<style type="text/css">
+    @font-face {
+        font-family: 'FontAwesome';
+        src: url('{{ asset("fonts/fontawesome-webfont.eot?v=4.7.0") }}');
+        src: url('{{ asset("fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") }}') format('embedded-opentype'), url('{{ asset("fonts/fontawesome-webfont.woff2?v=4.7.0") }}') format('woff2'), url('{{ asset("fonts/fontawesome-webfont.woff?v=4.7.0") }}') format('woff'), url('{{ asset("fonts/fontawesome-webfont.ttf?v=4.7.0") }}') format('truetype'), url('{{ asset("fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") }}') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    .fa {
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+        font-family: "AleksandraCRegular", sans-serif;
+        {#background: url('{{ asset('img/glaza2.jpg') }}') no-repeat center center fixed;#}
+        background: white;
+        /*background-size: cover;*/
+    }
+
+    .container {
+        background: white;
+        text-align: center;
+    }
+
+    .fa-vk:before {
+        content: "\f189";
+        font-size: 22pt;
+    }
+</style>
+
+<div class="container" style="margin-top: 7%">
+    <div class="row">
+        <div class="col-md-12"><img src="{{ asset('img/logo2017.png') }}" width="220"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Мы скоро начнем! Оставайтесь с нами.</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <div class="timer" data-date="2017-08-14 00:00:00"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="https://vk.com/sibirctf" style="color: black"><i class="fa fa-vk" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(".timer").TimeCircles({
+        start: true,
+        "bg_width": 1.9,
+        "fg_width": 0.04,
+        circle_bg_color: "#000000",
+        time: {
+            Days: { color: "#f3f1ed" },
+            Hours: { color: "#f3f1ed" },
+            Minutes: { color: "#f3f1ed" },
+            Seconds: { color: "#f3f1ed", "show": false }
+        }
+    });
+</script>
+</body>
+</html>

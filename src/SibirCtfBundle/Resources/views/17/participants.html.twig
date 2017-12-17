@@ -1,0 +1,118 @@
+{% extends 'SibirCtfBundle:17:base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="box">
+            <div class="col-sm-offset-3 col-sm-6">
+                {% if not teamsApproved and not teamsPending and not teamsReject %}
+                    <h2 class="text-center">Никто не зарегистрировался. <br />
+                        <a href="{{ path('seventeen_signup') }}">Будьте первым</a></h2>
+                {% endif %}
+                {% if teamsApproved %}
+                <hr>
+                <h2 class="intro-text text-center">Команды, которые точно приедут</h2>
+                <hr>
+                <table class="table table-striped">
+                    <thead class="table-thead">
+                    <tr>
+                        <th>Название</th>
+                        {#<th style="text-align: center">Логотип</th>#}
+                        <th>Город</th>
+                        <th>Статус заявки</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for team in teamsApproved %}
+
+                        <tr {% if team.status == 1 %}class="success"{% else %} class="warning"{% endif %}>
+                            <td>
+                                {{ team.title }}
+                            </td>
+                            {#<td style="text-align: center">#}
+                            {#<img src="{{ team.logo }}" alt="" style="width: 30%;">#}
+                            {#</td>#}
+                            <td>
+                                {{ team.city }}
+                            </td>
+                            <td>
+                                {{ team.statusDescription }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+                {% if teamsPending %}
+                <hr>
+                <h2 class="intro-text text-center">Команды на рассмотрении</h2>
+                <hr>
+                <table class="table table-striped">
+                    <thead class="table-thead">
+                    <tr>
+                        <th>Название</th>
+                        {#<th style="text-align: center">Логотип</th>#}
+                        <th>Город</th>
+                        <th>Статус заявки</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for team in teamsPending %}
+
+                        <tr {% if team.status == 1 %}class="success"{% else %} class="warning"{% endif %}>
+                            <td>
+                                {{ team.title }}
+                            </td>
+                            {#<td style="text-align: center">#}
+                            {#<img src="{{ team.logo }}" alt="" style="width: 30%;">#}
+                            {#</td>#}
+                            <td>
+                                {{ team.city }}
+                            </td>
+                            <td>
+                                {{ team.statusDescription }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+
+                {% if teamsReject %}
+                <hr>
+                <h2 class="intro-text text-center">Отклоненные заявки</h2>
+                <hr>
+                <table class="table table-striped">
+                    <thead class="table-thead">
+                    <tr>
+                        <th>Название</th>
+                        {#<th style="text-align: center">Логотип</th>#}
+                        <th>Город</th>
+                        <th>Статус заявки</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for team in teamsReject %}
+
+                        <tr {% if team.status == 1 %}class="success"{% else %} class="warning"{% endif %}>
+                            <td>
+                                {{ team.title }}
+                            </td>
+                            {#<td style="text-align: center">#}
+                            {#<img src="{{ team.logo }}" alt="" style="width: 30%;">#}
+                            {#</td>#}
+                            <td>
+                                {{ team.city }}
+                            </td>
+                            <td>
+                                {{ team.statusDescription }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                    {% endif %}
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

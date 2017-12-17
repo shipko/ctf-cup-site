@@ -1,0 +1,60 @@
+img[src="http://sibirctf.org/img/logo_teams/mustang.png"] {
+    top: -119px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/tio .png"] {
+    top: -107px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/catnotabread.png"] {
+    top: -87px;
+    left: 23px;
+}
+
+
+img[src="http://sibirctf.org/img/logo_teams/censored.png"] {
+    top: -168px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/dogs.png"] {
+    top: -67px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/life.png"] {
+    top: -40px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/censored.png"] {
+    top: -168px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/2day.jpg"] {
+    top: -92px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/yozik.jpg"] {
+    top: -54px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/sibears.png"] {
+    top: -111px;
+}
+
+
+img[src="http://sibirctf.org/img/logo_teams/sharlike.png"] {
+    top: -88px;
+}
+
+img[src="http://sibirctf.org/img/logo_teams/paperwhale.jpg"] {
+    top: -43px;
+}
+
+.back_img {
+    max-width: 342px;
+}
+
+.teams_name {
+    height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

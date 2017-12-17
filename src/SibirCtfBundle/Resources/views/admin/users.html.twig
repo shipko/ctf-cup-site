@@ -1,0 +1,32 @@
+{% extends 'SibirCtfBundle:admin:base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Одобренные команды</h1>
+        <table class="table">
+            <thead class="thead-default">
+            <tr>
+                <th>Название команды</th>
+                <th>Город</th>
+                <th>Универ</th>
+                <th>Телефон</th>
+                <th>Количество человек</th>
+                <th>Конференция?</th>
+                <th>Кнопка</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+                <tr>
+                    <th>{{ user.username }}</th>
+                    <td>{{ user.mail }}</td>
+                    <td>{{ user.arrivalDescription }}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

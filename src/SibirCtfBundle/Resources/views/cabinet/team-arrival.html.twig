@@ -1,0 +1,36 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+
+{% block body %}
+    <style>
+        .step-number {
+            font-size: 30pt;
+        }
+    </style>
+    <div class="row">
+        <div class="box">
+            <div class="col-md-7">
+                {{ form_start(form) }}
+                <h1>Мы ждем тебя в Томске!</h1>
+                <p>Мы уже готовим табличку, чтобы встречать тебя хоть где: в аэропорту, на ж.д. или автовокзале.</p>
+                <div class="col-md-12">{{ form_row(form.arrival_description) }}</div>
+                <div
+                <div class="col-md-12 text-right" style="margin-top: 20px">
+                    <button type="submit" class="btn btn-success form-submit">
+                        Готово
+                    </button>
+                </div>
+
+                {{ form_end(form) }}
+            </div>
+            <div class="col-md-5">
+                <img src="{{ asset('img/meet.png') }}" style="margin-top: 50px;" width="400">
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+

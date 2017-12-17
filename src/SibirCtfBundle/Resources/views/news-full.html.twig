@@ -1,0 +1,19 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+
+{% block body %}
+<div class="container-fluid news__wrapper">
+    <div class="row">
+        <div class="news-block__header" style="background-image: url('{{ asset('uploads/posters/' ~ news.poster) }}')">
+            <div class="news-block__title">
+                <span class="label" style="background: #00ad7c; padding: 10px; font-size: 100%">Дневник соревнования</span>
+                {{ news.date|date("d") }} {{ months[news.date|date("n")] }} {{ news.date|date("Y") }}
+                <h3 class="news__title">{{ news.title }}</h3>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2 news-block__content">{{ news.fullText|raw }}</div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+{% endblock %}
+
+

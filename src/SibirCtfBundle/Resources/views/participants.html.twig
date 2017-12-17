@@ -1,0 +1,80 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+{% set registration = app.session.flashbag.get('registration')|first %}
+
+{% block body %}
+    <div class="row">
+        <div class="box">
+            <div class="col-sm-5">
+                <hr>
+                <h3 class="intro-text text-center">
+                    <a role="button" data-toggle="collapse" href="#reg" aria-expanded="true" aria-controls="reg">Регистрация</a>
+                </h3>
+                {% if (registration == 'OK') %}
+                    <div class="well {% if (registration == 'OK') %}text-success{% endif %}">
+                           Заявка на участие принята
+                    </div>
+                {% endif %}
+                {{ form_start(form) }}
+                <div class="col-sm-6 form-registration">{{ form_row(form.title) }}</div>
+                <div class="col-sm-6 form-registration">{{ form_row(form.school) }}</div>
+
+                <div class="col-sm-12 form-registration">{{ form_row(form.members) }}</div>
+
+                <div class="col-sm-6 form-registration">{{ form_row(form.captain) }}</div>
+                <div class="col-sm-6 form-registration">{{ form_row(form.city) }}</div>
+                <div class="col-sm-6 form-registration">{{ form_row(form.email) }}</div>
+                <div class="col-sm-6 form-registration">{{ form_row(form.phone) }}</div>
+
+                <div class="col-sm-12 form-registration">{{ form_row(form.logo) }}</div>
+
+
+                <div class="col-sm-12 form-registration">{{ form_row(form.conference) }}</div>
+
+
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-default ">
+                        <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Отправить заявку
+                    </button>
+                </div>
+
+                {{ form_end(form) }}
+            </div>
+
+            <div class="col-sm-7">
+                <hr>
+                <h2 class="intro-text text-center">Команды</h2>
+                <hr>
+                <table class="table table-striped">
+                    <thead class="table-thead">
+                    <tr>
+                        <th>Название</th>
+                        {#<th style="text-align: center">Логотип</th>#}
+                        <th>Город</th>
+                        <th>Статус заявки</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for team in teams %}
+
+                        <tr {% if team.status == 1 %}class="success"{% else %} class="warning"{% endif %}>
+                            <td>
+                                {{ team.title }}
+                            </td>
+                            {#<td style="text-align: center">#}
+                            {#<img src="{{ team.logo }}" alt="" style="width: 30%;">#}
+                            {#</td>#}
+                            <td>
+                                {{ team.city }}
+                            </td>
+                            <td>
+                                {{ team.statusDescription }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

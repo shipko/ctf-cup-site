@@ -1,0 +1,1294 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SibirCTF</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link href="/css/style.css" rel="stylesheet"/>
+
+    <!-- Fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic"
+          rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<div class="brand">
+    <a href="/2016/" style="text-decoration:none; color: #fff">
+        <img src="/img/logo.png" alt="" style="height: 200px;">
+        <div class="fuck" style="display: none;">
+            <img src="/img/logo.png" alt="" style="display: none;">
+        </div>
+    </a>
+</div>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/2016/rules">Правила</a></li>
+                <li><a href="/2016/results">Результаты</a></li>
+                <li><a href="/2016/participants">Участники</a></li>
+                <li><a href="/2016/timetable">Расписание</a></li>
+                <li><a href="/2016/teams">Команда</a></li>
+                <li><a href="/2016/sponsors">Организаторы</a></li>
+                <li><a href="/2016/news">Новости</a></li>
+                <li><a href="/2016/conference">Конференция</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<div class="container">
+
+    <div class="row">
+        <div class="box">
+            <div class="col-sm-5">
+                <hr>
+                <h3 class="intro-text text-center">
+                    <a role="button" data-toggle="collapse" href="#reg" aria-expanded="true" aria-controls="reg">Регистрация</a>
+                </h3>
+                <form name="team" method="post">
+                    <div class="col-sm-6 form-registration"><div><label for="team_title" class="required">Название команды</label><input type="text" id="team_title" name="team[title]" required="required" class="form-control" /></div></div>
+                    <div class="col-sm-6 form-registration"><div><label for="team_school" class="required">Учебное заведение</label><input type="text" id="team_school" name="team[school]" required="required" class="form-control" /></div></div>
+
+                    <div class="col-sm-12 form-registration"><div><label for="team_members" class="required">Участники(ФИО). от 4 до 7 человек</label><textarea id="team_members" name="team[members]" required="required" class="form-control"></textarea></div></div>
+
+                    <div class="col-sm-6 form-registration"><div><label for="team_captain" class="required">Капитан команды(ФИО)</label><input type="text" id="team_captain" name="team[captain]" required="required" class="form-control" /></div></div>
+                    <div class="col-sm-6 form-registration"><div><label for="team_city" class="required">Город</label><input type="text" id="team_city" name="team[city]" required="required" class="form-control" /></div></div>
+                    <div class="col-sm-6 form-registration"><div><label for="team_email" class="required">e-mail</label><input type="email" id="team_email" name="team[email]" required="required" class="form-control" /></div></div>
+                    <div class="col-sm-6 form-registration"><div><label for="team_phone" class="required">Телефон</label><input type="text" id="team_phone" name="team[phone]" required="required" class="form-control" /></div></div>
+
+                    <div class="col-sm-12 form-registration"><div><label for="team_logo" class="required">Ссылка на логотип</label><input type="text" id="team_logo" name="team[logo]" required="required" class="form-control" /></div></div>
+
+
+                    <div class="col-sm-12 form-registration"><div><label for="team_conference">Выступление на конференции</label><input type="checkbox" id="team_conference" name="team[conference]" value="1" /></div></div>
+
+
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-default ">
+                            <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span> Отправить заявку
+                        </button>
+                    </div>
+
+                    <input type="hidden" id="team__token" name="team[_token]" value="ecA9DEnLvo-UQe0JnVQm4BW5nvumLMcBs2wgzODhiwU" /></form>
+            </div>
+
+            <div class="col-sm-7">
+                <hr>
+                <h2 class="intro-text text-center">Команды</h2>
+                <hr>
+                <table class="table table-striped">
+                    <thead class="table-thead">
+                    <tr>
+                        <th>Название</th>
+                        <th>Город</th>
+                        <th>Статус заявки</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr class="success">
+                        <td>
+                            TL;DR
+                        </td>
+                        <td>
+                            Ханты-Мансийск
+                        </td>
+                        <td>
+                            Заявка принята (победители ЮграCTF)
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            Mu574n9
+                        </td>
+                        <td>
+                            Томск
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            paperwhale
+                        </td>
+                        <td>
+                            Красноярск
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            [censored]
+                        </td>
+                        <td>
+                            Калининград
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            xXx_Я_не_ХЛЕБ_я_КОТ_хХх
+                        </td>
+                        <td>
+                            Новосибирск
+                        </td>
+                        <td>
+                            Заявка принята (победители NSK CTF)
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            (_xXx_-=HOBOCu6uPCKuE_IICbl_1337=-_xXx_)
+                        </td>
+                        <td>
+                            Новосибирск
+                        </td>
+                        <td>
+                            Заявка принята (победители AltayCTF)
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            Yozik
+                        </td>
+                        <td>
+                            Красноярск
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            Team Information Offensive
+                        </td>
+                        <td>
+                            Новосибирск
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            Life
+                        </td>
+                        <td>
+                            Новосибирск
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            SharLike
+                        </td>
+                        <td>
+                            Барнаул
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            SiBears
+                        </td>
+                        <td>
+                            Томск
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            MrMugiwara
+                        </td>
+                        <td>
+                            casablanca
+                        </td>
+                        <td>
+                            Отклонено. Команда не может состоять из 1 человека
+                        </td>
+                    </tr>
+
+                    <tr class="success">
+                        <td>
+                            !2day
+                        </td>
+                        <td>
+                            Омск
+                        </td>
+                        <td>
+                            Заявка принята
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            motherhackers
+                        </td>
+                        <td>
+                            Таганрог
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            kmashell
+                        </td>
+                        <td>
+                            Hồ Chí Minh
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Team-NOTOR10US
+                        </td>
+                        <td>
+                            Ulaanbaatar
+                        </td>
+                        <td>
+                            Отклонено. Нет информации о составе команды
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            beche_ha_khobi_iut
+                        </td>
+                        <td>
+                            Isfahan
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            d4rkc0de
+                        </td>
+                        <td>
+                            Delhi
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            NeOLux-C1Ph3r
+                        </td>
+                        <td>
+                            Paris
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            arslon
+                        </td>
+                        <td>
+                            Samarqand
+                        </td>
+                        <td>
+                            Заявка отклонена. Команда не может состоять из 1 человека
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            flagger
+                        </td>
+                        <td>
+                            ub
+                        </td>
+                        <td>
+                            Заявка отклонена. Недостаточно информации
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Revolution
+                        </td>
+                        <td>
+                            Ургенч
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Revolution
+                        </td>
+                        <td>
+                            Ургенч, Узбекистан
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            UCCU
+                        </td>
+                        <td>
+                            Taiwan
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            DnO
+                        </td>
+                        <td>
+                            Воронеж
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            h4rdF0rc3
+                        </td>
+                        <td>
+                            Москва
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            h4rdF0rc3
+                        </td>
+                        <td>
+                            Москва
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            D-SEC
+                        </td>
+                        <td>
+                            Ulaanbaatar
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Koibasta
+                        </td>
+                        <td>
+                            Самара
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            D@rk$h3ll
+                        </td>
+                        <td>
+                            City
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Vancir
+                        </td>
+                        <td>
+                            Amoy
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            janeman
+                        </td>
+                        <td>
+                            bhubaneswar
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            &#039;dsdf&lt;a&gt;ddd&lt;/a&gt;
+                        </td>
+                        <td>
+                            werwerwe
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            &#039;dsdf&lt;a&gt;ddd&lt;/a&gt;
+                        </td>
+                        <td>
+                            werwerwe
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            0xdoff9
+                        </td>
+                        <td>
+                            Ho Chi MInh
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            StASecure
+                        </td>
+                        <td>
+                            St Andrews
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            StASecure
+                        </td>
+                        <td>
+                            St Andrews
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Binary BØmbs
+                        </td>
+                        <td>
+                            Москва
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            LeoPold
+                        </td>
+                        <td>
+                            Москва
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            best_pwn
+                        </td>
+                        <td>
+                            korea
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            ManCity
+                        </td>
+                        <td>
+                            Sofia
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            stux3r
+                        </td>
+                        <td>
+                            Tomsk
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Operator Ghost
+                        </td>
+                        <td>
+                            Baltimore
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            LaR
+                        </td>
+                        <td>
+                            Мытищи
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            LaR
+                        </td>
+                        <td>
+                            Мытищи
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            фыва
+                        </td>
+                        <td>
+                            фыва
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            hy00un
+                        </td>
+                        <td>
+                            seoul
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            KXTI_1
+                        </td>
+                        <td>
+                            Казань
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Техническая Россия
+                        </td>
+                        <td>
+                            Владивосток
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Техническая Россия
+                        </td>
+                        <td>
+                            Владивосток
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            igorpyan
+                        </td>
+                        <td>
+                            Ярославль
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            #STAG
+                        </td>
+                        <td>
+                            Samara
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            0x67mac
+                        </td>
+                        <td>
+                            Sydney
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            SetSailForFail
+                        </td>
+                        <td>
+                            Воронеж
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            MilWestA
+                        </td>
+                        <td>
+                            Omaha, Nebraska
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Files0phers
+                        </td>
+                        <td>
+                            Berlin
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            duguhu
+                        </td>
+                        <td>
+                            ningbo
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            STRIA
+                        </td>
+                        <td>
+                            korea
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            pwn93
+                        </td>
+                        <td>
+                            NY
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            pwn93
+                        </td>
+                        <td>
+                            NY
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            ARGOS
+                        </td>
+                        <td>
+                            korea
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            LeaveCat
+                        </td>
+                        <td>
+                            Korea
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            ilswinr
+                        </td>
+                        <td>
+                            Incheon
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            MrMugiwara
+                        </td>
+                        <td>
+                            casablanca
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            &#039;&lt;script&gt;alert(&quot;Hello&quot;)&lt;/script&gt;
+                        </td>
+                        <td>
+                            emgngi
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            merges
+                        </td>
+                        <td>
+                            são paulo
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            FluxFingers
+                        </td>
+                        <td>
+                            Bochum
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            tmdahr1245
+                        </td>
+                        <td>
+                            seoul
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            tmdahr1245
+                        </td>
+                        <td>
+                            seoul
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            qqqqwe
+                        </td>
+                        <td>
+                            seoul
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            test
+                        </td>
+                        <td>
+                            kiro
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            CyberLutra
+                        </td>
+                        <td>
+                            Tel Aviv
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Unbroken Crackers
+                        </td>
+                        <td>
+                            Москва
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Marrexa
+                        </td>
+                        <td>
+                            Краснодар
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+
+                        </td>
+                        <td>
+                            Oruro
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Mr.
+                        </td>
+                        <td>
+                            San Francisco
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Mr.
+                        </td>
+                        <td>
+                            San Francisco
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            asdsa
+                        </td>
+                        <td>
+                            asd
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            ZiamWWNyyZjlGT
+                        </td>
+                        <td>
+                            New York
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            ZiamWWNyyZjlGT
+                        </td>
+                        <td>
+                            New York
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            bRazAqglSkJuP
+                        </td>
+                        <td>
+                            New York
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            bRazAqglSkJuP
+                        </td>
+                        <td>
+                            New York
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Вышивка  шевронов нашивок логотипов спецодежды  кожи Омск
+                        </td>
+                        <td>
+                            Istanbul
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Cats n
+                        </td>
+                        <td>
+                            Grand Prairie
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            lVZrbRwprrNhFk
+                        </td>
+                        <td>
+                            New York
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            lVZrbRwprrNhFk
+                        </td>
+                        <td>
+                            New York
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            I would like to thnk
+                        </td>
+                        <td>
+                            aB2Wse8i
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+
+                        </td>
+                        <td>
+                            Mount Carey
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Lybrel Birth Control Buy
+                        </td>
+                        <td>
+                            Nestor
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+
+                        </td>
+                        <td>
+                            Penza
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+                            Cialis Sans Ordonnance Luxembourg vbu
+                        </td>
+                        <td>
+                            Boden
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+
+                    <tr  class="warning">
+                        <td>
+
+                        </td>
+                        <td>
+                            NNovgorod
+                        </td>
+                        <td>
+                            На рассмотрении
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 text-center">
+                <p>&copy;	SibirCTF</p>
+
+            </div>
+            <div class="col-lg-2 text-center">
+                <div style="margin-top: 50px;" id="vk_contact_us"></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?127"></script>
+
+<!-- VK Widget -->
+
+<script type="text/javascript">
+    VK.Widgets.ContactUs("vk_contact_us", {redesign: 1, text: "Группа ВК", height: 30}, -125587906);
+</script>
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+
+
+<script src="http://e-timer.ru/js/etimer.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery(".eTimer").eTimer({
+            etType: 0, etDate: "29.09.2016.0.0", etTitleText: "", etTitleSize: 22, etShowSign: 1, etSep: ":", etFontFamily: "Times New Roman", etTextColor: "#a3a3a3", etPaddingTB: 17, etPaddingLR: 17, etBackground: "white", etBorderSize: 0, etBorderRadius: 0, etBorderColor: "white", etShadow: " 0px 0px 0px 0px #333333", etLastUnit: 2, etNumberFontFamily: "Impact", etNumberSize: 35, etNumberColor: "white", etNumberPaddingTB: 0, etNumberPaddingLR: 8, etNumberBackground: "#11abb0", etNumberBorderSize: 0, etNumberBorderRadius: 5, etNumberBorderColor: "white", etNumberShadow: "inset 0px 0px 8px 0px rgba(0, 0, 0, 0.5)"
+        });
+    });
+</script>
+<script type="text/javascript">
+    setTimeout(function () {
+        $('.fuck').fadeIn('fast')
+    }, 3000);
+
+
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter39339400 = new Ya.Metrika({
+                    id:39339400,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/39339400" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>

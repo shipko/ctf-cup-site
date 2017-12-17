@@ -1,0 +1,43 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+
+{% block body %}
+    <style>
+        .step-number {
+            font-size: 30pt;
+        }
+    </style>
+    <div class="row">
+        <div class="box">
+            <div class="col-md-7">
+                <h1>Привет!</h1>
+                {% if team %}
+                <h4>Твоя команда - {{ team.title }}
+                    {% if user.member.captain %}
+                    <a href="{{ path('cabinet-team-edit') }}">(редактировать команду)</a>
+                    {% endif %}
+                </h4>
+                {% endif %}
+                <h3>Что нужно сделать прямо сейчас</h3>
+                <div class="row">
+                {% for step in steps %}
+                    <div class="col-md-2"><span class="step-number">{{ loop.index }}.</span></div>
+                    <div class="col-md-9"><p>{{ step|raw }}</p></div>
+                {% else %}
+                    <div class="col-md-12">Ты молодец, больше ничего не нужно!</div>
+                {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-5">
+                <h2>ID = {{ user.id }} <i class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="bottom" title="Этот идентификатор понадобится в день конференции"></i></h2>
+                <h3>Ты также можешь</h3>
+                <a href="{{ path('cabinet-team-arrival') }}">Отредактировать информацию о приезде</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+
+
+

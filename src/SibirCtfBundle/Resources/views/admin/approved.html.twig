@@ -1,0 +1,55 @@
+{% extends 'SibirCtfBundle:admin:base.html.twig' %}
+
+{% block body %}
+<div class="container">
+    <h1>Одобренные команды</h1>
+    <table class="table">
+        <thead class="thead-default">
+        <tr>
+            <th>Название команды</th>
+            <th>Город</th>
+            <th>Универ</th>
+            <th>Телефон</th>
+            <th>Количество человек</th>
+            <th>Конференция?</th>
+            <th>Кнопка</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for team in pending %}
+        <tr>
+            <th>{{ team.title }}</th>
+            <td>{{ team.city }}</td>
+            <td>{{ team.school }}</td>
+            <td>{{ team.phone }}</td>
+            <td>
+                <ul style="padding-left: 0;">
+                {% for member in team.members %}
+                    <li>{{ member.fio }} - {{ member.size }} {% if member.captain %}(капитан){% endif %}</li>
+                {% endfor %}
+                </ul>
+            </td>
+            <td>{% if team.conference == '1' %}Да{% else %}Нет{% endif %}
+            <button type="button" data-id="{{ team.id }}" class="more-info btn btn-info">Окончательно и бесповоротно</button>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+    $('.more-info').click(function () {
+        $el = $(this).removeClass('btn-info').addClass('btn-success');
+
+        var id  = $el.data('id'),
+            url = "{{ path('admin-request-approve', {'team': '0'}) }}";
+
+        $.ajax({
+            url: url.replace('0', id),
+            success: function() {
+                $el.text('Едут');
+            }
+        })
+    });
+</script>
+{% endblock %}

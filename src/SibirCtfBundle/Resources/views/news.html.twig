@@ -1,0 +1,29 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-lg-12 page__title">
+                <h2 class="text-center">Новости</h2>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+            {% for item in news %}
+                <div class="col-md-4 news-item">
+                <a href="{{ path('news-full', {'news': item.id } ) }}">
+                    <h3 style="font-size: 20pt;">{{ item.title }}</h3>
+                    <hr>
+                </a>
+                    {{ item.shortText }}
+                    <div class="row"><div class="col-md-12" style="color: #00ad7c;"><a href="{{ path('news-full', {'news': item.id } ) }}">Открыть статью »</a></div></div>
+                </div>
+                {% if loop.index % 3 == 0 %}
+                    <div class="clearfix"></div>
+                {% endif %}
+            {% endfor %}
+            </div>
+            <div class="clearfix"></div>
+    </div>
+</div>
+{% endblock %}
+
+

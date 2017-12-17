@@ -1,0 +1,53 @@
+{% extends 'SibirCtfBundle::base.html.twig' %}
+
+{% block body %}
+    {#<link rel="stylesheet" href="/css/fonts.css" />#}
+    {#<link rel="stylesheet" href="/css/fonts/font-awesome.css" />#}
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-lg-12 page__title">
+                <h2 class="intro-text text-center">Жюри</h2>
+            </div>
+            <div class="col-md-12 text-center"><h2 style="margin-bottom: 30px">Председатель жюри</h2></div>
+            <div class="devteam col-sm-12" style="margin-bottom: 30px;">
+                <div class="row">
+                    <div class="col-md-4"><img class="img-responsive" src="/img/jury/budnikov.jpg" alt=""></div>
+                    <div class="col-md-7 text-left">
+                        <h4>Александр Будников</h4>
+                        <h4>
+                            <small>Член-корреспондент Академии криптографии РФ</small>
+                        </h4>
+                        <p>
+                            Управляющий директор по информационной безопасности и специальным разработкам ПАО АФК «Система»
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 text-center"><h2 style="margin-bottom: 30px">Члены жюри</h2></div>
+
+            {% for person in jury %}
+                <div class="devteam col-sm-12" style="margin-bottom: 30px;">
+                    <div class="row">
+                        {% if person.image is defined %}
+                        <div class="col-md-4"><img class="img-responsive" src="/img/jury/{{ person.image }}" alt=""></div>
+                        {% else %}
+                        <div class="col-md-4"><img class="img-responsive" src="{{ asset('img/jury/nophoto.jpg') }}" alt=""></div>
+                        {% endif %}
+                        <div class="col-md-7 text-left">
+                            <h4>{{ person.person }}</h4>
+                            <h4>
+                                <small>{{ person.company }}{% if person.position is defined %}, {{ person.position }}{% endif %}</small>
+                            </h4>
+                            <p>
+                                {% if person.description is defined %}
+                                    {{ person.description }}
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+    </div>
+</div>
+{% endblock %}
